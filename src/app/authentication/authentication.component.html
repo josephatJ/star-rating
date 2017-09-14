@@ -1,0 +1,32 @@
+
+<div>
+  <ul>
+    <li class="text">
+      {{ rateAverage }}
+    </li>
+    <li class="text">
+      {{ rateAverage1 }}
+    </li>
+    <li class="text">
+      {{ rateAverage2 }}
+    </li>
+    <li class="text">
+      {{ rateAverage3 }}
+    </li>
+    <li class="text">
+      {{ rateAverage4 }}
+    </li>
+    <li class="text">
+      {{ rateAverage5 }}
+    </li>
+  </ul>
+</div>
+<div *ngIf="(user | async)?.email">
+    <input type="button" placeholder="1" name="star1" class="txt" value="1" (click)="getStarValue(1, userEmail)">
+    <input type="button" placeholder="2" name="star2" class="txt" value="2" (click)="getStarValue(2, userEmail)">
+    <input type="button" placeholder="3" name="star3" class="txt" value="3" (click)="getStarValue(3, userEmail)">
+    <input type="button" placeholder="4" name="star4" class="txt" value="4" (click)="getStarValue(4, userEmail)">
+    <input type="button" placeholder="5" name="star5" class="txt" value="5" (click)="getStarValue(5, userEmail)">
+</div>
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
