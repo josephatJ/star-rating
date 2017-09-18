@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
-import {AppRoutingModule} from './app.routing.module';
+import {AppRoutingModule        } from './app.routing.module';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import {AuthService} from './providers/auth.service';
+import {RatingsService} from './providers/ratings.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {AuthService} from './providers/auth.service';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     AppRoutingModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, RatingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

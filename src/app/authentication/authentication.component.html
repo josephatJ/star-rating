@@ -1,32 +1,63 @@
 
 <div>
   <ul>
-    <li class="text">
+    <li class="txt">
       {{ rateAverage }}
+      <div *ngIf="rateAverage > 4">
+        <table style="background-color: green">
+          <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
     </li>
-    <li class="text">
-      {{ rateAverage1 }}
-    </li>
-    <li class="text">
-      {{ rateAverage2 }}
-    </li>
-    <li class="text">
-      {{ rateAverage3 }}
+    <li class="text" *ngIf="rateAverage5">
+      {{ rateAverage5 }}
+      <table style="background-color: green">
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
     </li>
     <li class="text">
       {{ rateAverage4 }}
+      <table style="background-color: greenyellow">
+        <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
     </li>
     <li class="text">
-      {{ rateAverage5 }}
+      {{ rateAverage3 }}
+      <table style="background-color: greenyellow">
+        <tbody>
+        <tr><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li class="text">
+      {{ rateAverage2 }}<table style="background-color: gray">
+      <tbody>
+      <tr><td></td><td></td></tr>
+      </tbody>
+    </table>
+    </li>
+    <li class="text">
+      {{ rateAverage1 }}
+      <table style="background-color: black">
+        <tbody>
+        <tr><td></td></tr>
+        </tbody>
+      </table>
     </li>
   </ul>
 </div>
 <div *ngIf="(user | async)?.email">
-    <input type="button" placeholder="1" name="star1" class="txt" value="1" (click)="getStarValue(1, userEmail)">
-    <input type="button" placeholder="2" name="star2" class="txt" value="2" (click)="getStarValue(2, userEmail)">
-    <input type="button" placeholder="3" name="star3" class="txt" value="3" (click)="getStarValue(3, userEmail)">
-    <input type="button" placeholder="4" name="star4" class="txt" value="4" (click)="getStarValue(4, userEmail)">
-    <input type="button" placeholder="5" name="star5" class="txt" value="5" (click)="getStarValue(5, userEmail)">
+    <input type="button" placeholder="1" name="star1" class="txt" value="1" (click)="getStarValue(1, userEmail, theAppId)">
+    <input type="button" placeholder="2" name="star2" class="txt" value="2" (click)="getStarValue(2, userEmail, theAppId)">
+    <input type="button" placeholder="3" name="star3" class="txt" value="3" (click)="getStarValue(3, userEmail, theAppId)">
+    <input type="button" placeholder="4" name="star4" class="txt" value="4" (click)="getStarValue(4, userEmail, theAppId)">
+    <input type="button" placeholder="5" name="star5" class="txt" value="5" (click)="getStarValue(5, userEmail, theAppId)">
 </div>
 <button (click)="login()">Login</button>
 <button (click)="logout()">Logout</button>
